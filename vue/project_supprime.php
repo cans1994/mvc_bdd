@@ -1,0 +1,1 @@
+<strong>Le projet<b><?= $id ?></b> a été supprimé (s'il existait).</strong>

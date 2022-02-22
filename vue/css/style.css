@@ -1,0 +1,47 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@200&display=swap");
+
+* {
+  font-family: "Jost", sans-serif;
+  padding: 2%;
+}
+
+menu {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+menu li {
+  float: left;
+  padding: 3px;
+  border: black 1px solid;
+}
+
+a,
+a:link,
+a:hover,
+a:visited,
+a:active {
+  color: inherit;
+  text-decoration: none;
+}
+
+table {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+  border: 3px solid rgb(128, 15, 0);
+}
+
+body {
+  padding: 25px;
+  background-color: white;
+  color: black;
+  font-size: 25px;
+}
+.dark-mode {
+  background-color: black;
+  color: white;
+}
