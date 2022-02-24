@@ -19,6 +19,7 @@ $id = intval($_GET['id'] ?? -1);
 $op = $_GET['op'] ?? '';
 //op=opération
 
+
 switch ($table) {
     case 'Tag':
         require('controleur/TagController.php');
@@ -36,6 +37,8 @@ switch ($table) {
         require('controleur/StudentController.php');
         break;
 }
+
+
 
 
 /*if ($table === 'tag' || $table === '') {

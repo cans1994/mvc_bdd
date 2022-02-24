@@ -19,6 +19,7 @@ class Project
         $this->pdo = getpdo();
         //grâce à ca il saura cmt se connecter à la bdd
     }
+
     public function tous()
     {
         $sql = "select id, name, description, client_name, start_date, checkpoint_date, delivery_date from project";
@@ -31,10 +32,27 @@ class Project
         //avec le $data on récupère l'intégralité de la table
         return $data;
     }
+    public function selectionner(string $terme)
+    {
+        echo '<br><pre>';
+        var_dump($terme);
+        echo '</pre><br>';
+        $sql = "select id, name, description, client_name, start_date, checkpoint_date, delivery_date from project where name like '%" . $terme . "%'";
+        var_dump($sql);
+        //requête sql
+        $stmt = $this->pdo->prepare($sql);
+
+        // au dessus on cherche à comprendre la requête select id et l'optimiser,... puis en dessous on exécute
+        $stmt->execute();
+        //dans le cadre d'un select, ici le execute n'est pas forcément nécessaire. Par contre ds le k d'un insert, là du coup ca exécute l'ordre
+        $data = $stmt->fetchAll();
+        //avec le $data on récupère l'intégralité de la table
+        return $data;
+    }
     public function insert()
     {
         $sql = 'insert into project (name, description, client_name, start_date, checkpoint_date, delivery_date)';
-        $sql = $sql . 'values (:name, :description, :client_name, :start_date, :checkpoint_date, delivery_date)';
+        $sql = $sql . 'values (:name, :description, :client_name, :start_date, :checkpoint_date, :delivery_date)';
         $stmt = $this->pdo->prepare($sql);
         $stmt->bindParam(':name', $this->name);
         $stmt->bindParam(':description', $this->description);

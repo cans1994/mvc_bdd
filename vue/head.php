@@ -8,6 +8,9 @@
 <body>
   <nav>
     <h1>Ma base de données</h1>
+
+
+
     <div class="menu">
       <a href="index.php?table=Tag">Tag</a>
       <a href="index.php?table=Student">Student</a>
@@ -15,6 +18,7 @@
       <a href="index.php?table=School_year">School Year</a>
     </div>
   </nav>
+
   <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
   <script>
     function addDarkmodeWidget() {

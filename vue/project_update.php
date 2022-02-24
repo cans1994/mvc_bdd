@@ -7,7 +7,11 @@
 
     <label>Description</label> <br />
     <textarea rows="5" cols="20" name="description">Ajoutez une description</textarea><br />
+
+    <label>Nom du client</label> <br />
+    <textarea rows="5" cols="20" name="client_name">Ajoutez le nom du client</textarea><br />
     <input type="submit" value="Validez les valeurs" />
+
 
 
 </form>
