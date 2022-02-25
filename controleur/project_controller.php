@@ -6,11 +6,11 @@ $project = new Project();
 function afficherLesProjets(string $terme = '')
 {
     global $project;
-    echo '<br>dans a afficherLesProjets   ' . $terme;
+    //echo '<br>dans a afficherLesProjets   ' . $terme;
     if ($terme === '') {
         $projects = $project->tous();
     } else {
-        echo '<br>appel sélectionner ' . $terme;
+        //echo '<br>appel sélectionner ' . $terme;
         $projects = $project->selectionner($terme);
     }
     require_once('./vue/project_liste.php');
@@ -26,7 +26,7 @@ function formulaireRechercheProjet()
         $terme = trim($terme); //pour supprimer les espaces dans la requête de l'internaute
         $terme = strip_tags($terme); //pour supprimer les balises html dans la requête
         echo $terme;
-        echo '<br>appel afficherLesProjets   ' . $terme;
+        //echo '<br>appel afficherLesProjets   ' . $terme;
         afficherLesProjets($terme);
     } else {
         require_once('./vue/project_search.php');
@@ -50,7 +50,8 @@ switch ($op) {
     case 'maj':
         $project->select($id);
         $project->name = filter_input(INPUT_POST, 'nom', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-        $project->name = filter_input(INPUT_POST, 'description', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+        $project->description = filter_input(INPUT_POST, 'description', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+        $project->client_name = filter_input(INPUT_POST, 'client_name', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
         //filter sanitize retire les balises html
         $project->update();
         //header('location: index.php');

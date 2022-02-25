@@ -27,7 +27,7 @@ try {
     echo "ERREUR connexion à la base de données <br>";
     echo $e->getCode() . '' . $e->getMessage() . '<br>';
     http_response_code(500);
-    $pdo = null;
+    //$pdo = null;
 }
 //catch c'est nous même qui allons définir ce qui doit être fait et pas de error fatal
 //$e correspond à l'exception qui sera généré en cas d'erreur

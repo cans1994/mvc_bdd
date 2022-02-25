@@ -40,6 +40,7 @@ class Student
     $stmt->bindParam(':email', $this->email);
     $stmt->bindParam(':created_at', $this->created_at);
     $stmt->bindParam(':updated_at', $this->updated_at);
+    $stmt->bindParam(':id', $this->id);
     $stmt->execute();
     $this->select($this->id);
   }

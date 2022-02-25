@@ -35,10 +35,10 @@ class Project
     public function selectionner(string $terme)
     {
         echo '<br><pre>';
-        var_dump($terme);
+        //var_dump($terme);
         echo '</pre><br>';
         $sql = "select id, name, description, client_name, start_date, checkpoint_date, delivery_date from project where name like '%" . $terme . "%'";
-        var_dump($sql);
+        //var_dump($sql);
         //requête sql
         $stmt = $this->pdo->prepare($sql);
 
