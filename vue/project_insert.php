@@ -3,7 +3,7 @@
   <h2>Ajoutez votre project</h2>
 
   <label>Nom du projet</label> <br />
-  <textarea rows="5" cols="20" name="name">Entrez le nom du projet</textarea><br />
+  <textarea rows="5" cols="20" name="name" placeholder="Entrez le nom du projet"></textarea><br />
 
   <label>Description</label><br />
   <textarea rows="5" cols="20" name="description">Ajoutez une description</textarea><br />

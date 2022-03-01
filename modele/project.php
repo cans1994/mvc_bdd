@@ -96,7 +96,7 @@ class Project
     }
     public function delete(int $id)
     {
-        /*         
+
         $sql = 'delete from student_tag where student_id in (select id from student where project_id = :id)';
         $stmt = $this->pdo->prepare($sql);
         $stmt->bindParam(':id', $id);
@@ -114,7 +114,7 @@ class Project
         $stmt = $this->pdo->prepare($sql);
         $stmt->bindParam(':id', $id);
         //bindParam va se charger de gérer les caractères spéciaux et éviter les failles de sécurité. Par exemple si y a des é ou autres caractères spé dans un nom qu'on cherche à supprimer.
-        $stmt->execute(); */
+        $stmt->execute();
 
         $sql = 'delete from project where id = :id';
         $stmt = $this->pdo->prepare($sql);
